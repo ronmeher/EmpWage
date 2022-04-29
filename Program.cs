@@ -6,6 +6,7 @@ namespace EmpWage
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to Employee Wage Computation Program!");     
             int IsPresent = 1;
             int WorkingHr = 0;
             int WagePerHr = 100;
