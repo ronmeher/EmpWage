@@ -1,0 +1,16 @@
+C:\Users\ROHAN\source\repos\EmpWage\bin\Debug\net5.0\EmpWage.exe
+C:\Users\ROHAN\source\repos\EmpWage\bin\Debug\net5.0\EmpWage.deps.json
+C:\Users\ROHAN\source\repos\EmpWage\bin\Debug\net5.0\EmpWage.runtimeconfig.json
+C:\Users\ROHAN\source\repos\EmpWage\bin\Debug\net5.0\EmpWage.runtimeconfig.dev.json
+C:\Users\ROHAN\source\repos\EmpWage\bin\Debug\net5.0\EmpWage.dll
+C:\Users\ROHAN\source\repos\EmpWage\bin\Debug\net5.0\ref\EmpWage.dll
+C:\Users\ROHAN\source\repos\EmpWage\bin\Debug\net5.0\EmpWage.pdb
+C:\Users\ROHAN\source\repos\EmpWage\obj\Debug\net5.0\EmpWage.csproj.AssemblyReference.cache
+C:\Users\ROHAN\source\repos\EmpWage\obj\Debug\net5.0\EmpWage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ROHAN\source\repos\EmpWage\obj\Debug\net5.0\EmpWage.AssemblyInfoInputs.cache
+C:\Users\ROHAN\source\repos\EmpWage\obj\Debug\net5.0\EmpWage.AssemblyInfo.cs
+C:\Users\ROHAN\source\repos\EmpWage\obj\Debug\net5.0\EmpWage.csproj.CoreCompileInputs.cache
+C:\Users\ROHAN\source\repos\EmpWage\obj\Debug\net5.0\EmpWage.dll
+C:\Users\ROHAN\source\repos\EmpWage\obj\Debug\net5.0\ref\EmpWage.dll
+C:\Users\ROHAN\source\repos\EmpWage\obj\Debug\net5.0\EmpWage.pdb
+C:\Users\ROHAN\source\repos\EmpWage\obj\Debug\net5.0\EmpWage.genruntimeconfig.cache
