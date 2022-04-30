@@ -14,7 +14,13 @@ namespace EmpWage
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program!");
             
+<<<<<<< HEAD
             int WorkingHr = 0;
+=======
+            
+            int WorkingHr = 0;
+           
+>>>>>>> UC4
             int Wage = 0;
 
             Random random = new Random();
