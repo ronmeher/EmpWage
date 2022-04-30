@@ -2,16 +2,19 @@
 
 namespace EmpWage
 {
+   
     internal class Program
-    {
+    { 
+    
+    public const int IsFullTime = 1;
+    public const int IsPartTime = 2;
+    public const int WagePerHr = 100;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program!");
             
-            int IsFullTime = 1;
-            int IsPartTime = 2;
             int WorkingHr = 0;
-            int WagePerHr = 100;
             int Wage = 0;
 
             Random random = new Random();
@@ -19,22 +22,23 @@ namespace EmpWage
             int EmpCheck = random.Next(3);
 
 
-            if (EmpCheck == IsFullTime)
+            switch (EmpCheck)
             {
-                Console.WriteLine("Employee worked for Full-Time");
-                WorkingHr = 8;
+                case IsFullTime:
+                    Console.WriteLine("Employee worked for Full-Time");
+                    WorkingHr = 8;
+                    break;
+
+                case IsPartTime:
+                    Console.WriteLine("Employee worked for Part-Time");
+                    WorkingHr = 4;
+                    break;
 
 
-            }
-            else if (EmpCheck == IsPartTime)
-            {
-                Console.WriteLine("Employee worked for Part-Time");
-                WorkingHr = 4;
-            }
-            else
-            {
-                Console.WriteLine("Empoyee was Absent!");
-                WorkingHr = 0;
+                default:
+                    Console.WriteLine("Empoyee was Absent!");
+                    WorkingHr = 0;
+                    break;
             }
 
             Wage = WorkingHr * WagePerHr;
