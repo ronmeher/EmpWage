@@ -6,49 +6,51 @@ namespace EmpWage
     internal class Program
     { 
     
-    public const int IsFullTime = 1;
-    public const int IsPartTime = 2;
-    public const int WagePerHr = 100;
+        public const int IsFullTime = 1;
+        public const int IsPartTime = 2;
+        public const int WagePerHr = 100;
+        public const int WorkDaysPerMonth = 20;
 
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program!");
             
-<<<<<<< HEAD
             int WorkingHr = 0;
-=======
-            
-            int WorkingHr = 0;
-           
->>>>>>> UC4
             int Wage = 0;
+            int TotalWage = 0;  
 
-            Random random = new Random();
+            
 
-            int EmpCheck = random.Next(3);
-
-
-            switch (EmpCheck)
+            for (int day = 1; day <= WorkDaysPerMonth; day++)
             {
-                case IsFullTime:
+                Random random = new Random();
+                int EmpCheck = random.Next(3);
+
+                switch (EmpCheck)
+                {
+                    case IsFullTime:
                     Console.WriteLine("Employee worked for Full-Time");
                     WorkingHr = 8;
                     break;
 
-                case IsPartTime:
+                    case IsPartTime:
                     Console.WriteLine("Employee worked for Part-Time");
                     WorkingHr = 4;
                     break;
 
 
-                default:
+                    default:
                     Console.WriteLine("Empoyee was Absent!");
-                    WorkingHr = 0;
                     break;
+                }
+
+                Wage = WorkingHr * WagePerHr;
+                TotalWage += Wage;
+                Console.WriteLine("Employee wage is " +TotalWage);
+      
             }
 
-            Wage = WorkingHr * WagePerHr;
-            Console.WriteLine("Employee Wage is " + Wage);
+              Console.WriteLine("The Employee Wage for a month is " +TotalWage);
         }
     }
 }
