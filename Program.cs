@@ -8,11 +8,8 @@ namespace EmpWage
     
         public const int IsFullTime = 1;
         public const int IsPartTime = 2;
-        public const int WagePerHr = 100;
-        public const int WorkDaysPerMonth = 20;
-        public const int MaxWorkHrPerMonth = 100;
 
-        public static int computeEmpWage()
+        public static int computeEmpWage(string company, int WagePerHr, int WorkDaysPerMonth, int MaxWorkHrPerMonth)
         {
             int WorkingHr = 0;
             int TotalWorkingDays = 0;
@@ -63,8 +60,9 @@ namespace EmpWage
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program!");
             
-            computeEmpWage();
-            
+            computeEmpWage("D-Mart", 20, 2, 10);
+            computeEmpWage("Jio", 22, 2, 12);
+
         }
         
     }
