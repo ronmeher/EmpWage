@@ -12,15 +12,13 @@ namespace EmpWage
         public const int WorkDaysPerMonth = 20;
         public const int MaxWorkHrPerMonth = 100;
 
-        static void Main(string[] args)
+        public static int computeEmpWage()
         {
-            Console.WriteLine("Welcome to Employee Wage Computation Program!");
-            
             int WorkingHr = 0;
             int TotalWorkingDays = 0;
-            int TotalWorkingHr = 0;  
+            int TotalWorkingHr = 0;
 
-            
+
 
             while (TotalWorkingHr <= MaxWorkHrPerMonth && TotalWorkingDays < WorkDaysPerMonth)
             {
@@ -31,28 +29,42 @@ namespace EmpWage
                 switch (EmpCheck)
                 {
                     case IsFullTime:
-                    Console.WriteLine("Employee worked for Full-Time");
-                    WorkingHr = 8;
-                    break;
+                        Console.WriteLine("Employee worked for Full-Time");
+                        WorkingHr = 8;
+                        break;
 
                     case IsPartTime:
-                    Console.WriteLine("Employee worked for Part-Time");
-                    WorkingHr = 4;
-                    break;
+                        Console.WriteLine("Employee worked for Part-Time");
+                        WorkingHr = 4;
+                        break;
 
 
                     default:
-                    Console.WriteLine("Empoyee was Absent!");
-                    break;
+                        Console.WriteLine("Empoyee was Absent!");
+                        break;
                 }
 
                 TotalWorkingHr += WorkingHr;
-                Console.WriteLine("Days:" +TotalWorkingDays + " Hours:" +WorkingHr);
-      
+                Console.WriteLine("Days:" + TotalWorkingDays + " Hours:" + WorkingHr);
+
+
             }
 
             int TotalWage = TotalWorkingHr * WagePerHr;
             Console.WriteLine("Total Employee Wage:" + TotalWage);
+            return TotalWage;
+
+
+
+
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome to Employee Wage Computation Program!");
+            
+            computeEmpWage();
+            
         }
         
     }
