@@ -5,63 +5,92 @@ namespace EmpWage
    
     internal class Program
     { 
-    
-        public const int IsFullTime = 1;
-        public const int IsPartTime = 2;
-
-        public static int computeEmpWage(string company, int WagePerHr, int WorkDaysPerMonth, int MaxWorkHrPerMonth)
+        public class EmpWageBuilderObject
         {
-            int WorkingHr = 0;
-            int TotalWorkingDays = 0;
-            int TotalWorkingHr = 0;
 
+            public const int IsFullTime = 1;
+            public const int IsPartTime = 2;
 
+            private string company;
+            private int WagePerHr;
+            private int WorkDaysPerMonth;
+            private int MaxWorkHrPerMonth;
+            private int EmpWage;
 
-            while (TotalWorkingHr <= MaxWorkHrPerMonth && TotalWorkingDays < WorkDaysPerMonth)
+            public EmpWageBuilderObject(string company, int WagePerHr, int WorkDaysPerMonth, int MaxWorkHrPerMonth)
+            { 
+                this.company = company;
+                this.WagePerHr = WagePerHr;
+                this.WorkDaysPerMonth = WorkDaysPerMonth;
+                this.MaxWorkHrPerMonth = MaxWorkHrPerMonth;
+            }
+
+            public void computeEmpWage()
             {
-                TotalWorkingDays++;
-                Random random = new Random();
-                int EmpCheck = random.Next(3);
 
-                switch (EmpCheck)
+                int WorkingHr = 0;
+                int TotalWorkingDays = 0;
+                int TotalWorkingHr = 0;
+
+
+
+                while (TotalWorkingHr <= this.MaxWorkHrPerMonth && TotalWorkingDays < this.WorkDaysPerMonth)
                 {
-                    case IsFullTime:
-                        Console.WriteLine("Employee worked for Full-Time");
-                        WorkingHr = 8;
-                        break;
+                    TotalWorkingDays++;
+                    Random random = new Random();
+                    int EmpCheck = random.Next(3);
 
-                    case IsPartTime:
-                        Console.WriteLine("Employee worked for Part-Time");
-                        WorkingHr = 4;
-                        break;
+                    switch (EmpCheck)
+                    {
+                        case IsFullTime:
+                            Console.WriteLine("Employee worked for Full-Time");
+                            WorkingHr = 8;
+                            break;
+
+                        case IsPartTime:
+                            Console.WriteLine("Employee worked for Part-Time");
+                            WorkingHr = 4;
+                            break;
 
 
-                    default:
-                        Console.WriteLine("Empoyee was Absent!");
-                        break;
+                        default:
+                            Console.WriteLine("Empoyee was Absent!");
+                            break;
+                    }
+
+                    TotalWorkingHr += WorkingHr;
+                    Console.WriteLine("Days:" + TotalWorkingDays + " Hours:" + WorkingHr);
+
+
                 }
 
-                TotalWorkingHr += WorkingHr;
-                Console.WriteLine("Days:" + TotalWorkingDays + " Hours:" + WorkingHr);
+                int TotalWage = TotalWorkingHr * this.WagePerHr;
+                Console.WriteLine("Total Employee Wage for the company: " +company + "is: " +TotalWage);
+                
 
 
             }
 
-            int TotalWage = TotalWorkingHr * WagePerHr;
-            Console.WriteLine("Total Employee Wage:" + TotalWage);
-            return TotalWage;
-
-
-
+            public string toString()
+            {
+                return "Total Employee Wage for the company: " +this.company + " is: " +this.EmpWage;
+            }
 
         }
+
+
 
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program!");
-            
-            computeEmpWage("D-Mart", 20, 2, 10);
-            computeEmpWage("Jio", 22, 2, 12);
+
+            EmpWageBuilderObject dmart = new EmpWageBuilderObject("DMart ", 4, 2, 10);
+            EmpWageBuilderObject jio = new EmpWageBuilderObject("Jio ", 10, 4, 20);
+            dmart.computeEmpWage();
+            Console.WriteLine(dmart.toString());
+            jio.computeEmpWage();
+            Console.WriteLine(jio.ToString());
+
 
         }
         
